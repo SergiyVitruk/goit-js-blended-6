@@ -46,14 +46,7 @@ export function markupProducts(arr) {
     .join('');
 }
 
-export async function productRender() {
-  try {
-    const data = await getProducts();
-    console.log(data);
-
-    productsList.insertAdjacentHTML('afterbegin', markupProducts(data));
-  } catch (error) {
-    console.error(error);
-    iziToast.error({ message: 'Loading error' });
-  }
+export function productRender(data) {
+  productsList.innerHTML = '';
+  productsList.insertAdjacentHTML('afterbegin', markupProducts(data));
 }
