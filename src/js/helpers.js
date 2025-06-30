@@ -3,8 +3,12 @@ import { getFromStorage } from './storage.js';
 
 //Допоміжні функції
 export function updateCounters() {
-  refs.countCart.textContent = getFromStorage('cart').length;
-  refs.countWishlist.textContent = getFromStorage('wishlist').length;
+  const cartItems = getFromStorage('cart');
+  const wishlistItems = getFromStorage('wishlist');
+  console.log('Update counters:', cartItems.length, wishlistItems.length);
+
+  refs.countCart.textContent = cartItems.length;
+  refs.countWishlist.textContent = wishlistItems.length;
 }
 
 export function showLoader() {

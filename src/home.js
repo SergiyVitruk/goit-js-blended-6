@@ -26,6 +26,7 @@ getCategories()
 
 async function loadProducts() {
   showLoader();
+  await new Promise(r => setTimeout(r, 0)); // дозволити браузеру оновити UI
   try {
     const skip = (currentPage - 1) * limit;
     const products = await getProducts({ limit, skip });

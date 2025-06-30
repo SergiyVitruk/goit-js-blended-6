@@ -1,7 +1,7 @@
-import { getFromStorage } from './storage.js';
-import { getProductsById } from './products-api.js';
-import { renderProducts } from './render-function.js';
-import { refs } from './refs.js';
+import { getFromStorage } from './js/storage.js';
+import { getProductsById } from './js/products-api.js';
+import { renderProducts } from './js/render-function.js';
+import { refs } from './js/refs.js';
 import iziToast from 'izitoast';
 
 //Логіка сторінки Wishlist

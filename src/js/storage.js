@@ -9,6 +9,7 @@ export function saveToStorage(key, data) {
 
 export function toggleItemInStorage(key, itemId) {
   const items = getFromStorage(key);
+  console.log('Before toggle', key, items, itemId);
   const index = items.indexOf(itemId);
   if (index === -1) {
     items.push(itemId);
@@ -16,6 +17,7 @@ export function toggleItemInStorage(key, itemId) {
     items.splice(index, 1);
   }
   saveToStorage(key, items);
+  console.log('After toggle', key, items);
   return items;
 }
 

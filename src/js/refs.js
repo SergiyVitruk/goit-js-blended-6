@@ -8,7 +8,7 @@ export const refs = {
   searchInput: document.querySelector('.search-form__input'),
   clearSearchBtn: document.querySelector('.search-form__btn-clear'),
   notFound: document.querySelector('div.not-found'),
-  countCart: document.querySelector('span[data-count="cart"]'),
-  countWishlist: document.querySelector('span[data-count="wishlist"]'),
+  countCart: document.querySelector('span[data-cart-count]'),
+  countWishlist: document.querySelector('span[data-wishlist-count]'),
   loader: document.querySelector('.loader'),
 };

@@ -74,12 +74,13 @@ refs.modal.addEventListener('click', event => {
 });
 
 refs.modalContent.addEventListener('click', event => {
-  const wishlistBtn = event.target.closest('.modal-product__wishlist-btn');
-  const cartBtn = event.target.closest('.modal-product__cart-btn');
+  const wishlistBtn = event.target.closest('.modal-product__btn--wishlist');
+  const cartBtn = event.target.closest('.modal-product__btn--cart');
 
   if (wishlistBtn) {
     const id = +wishlistBtn.dataset.id;
-    const updated = toggleItemInStorage('wishlist', id);
+    console.log('Wishlist toggle', id);
+    toggleItemInStorage('wishlist', id);
     wishlistBtn.textContent = isInStorage('wishlist', id)
       ? 'Remove from Wishlist'
       : 'Add to Wishlist';
@@ -88,7 +89,8 @@ refs.modalContent.addEventListener('click', event => {
 
   if (cartBtn) {
     const id = +cartBtn.dataset.id;
-    const updated = toggleItemInStorage('cart', id);
+    console.log('Cart toggle', id);
+    toggleItemInStorage('cart', id);
     cartBtn.textContent = isInStorage('cart', id)
       ? 'Remove from Cart'
       : 'Add to Cart';
