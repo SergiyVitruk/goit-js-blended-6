@@ -1,27 +1,36 @@
 import axios from 'axios';
 
 // Функції для роботи з бекендом
-const BASE_URL = 'https://dummyjson.com';
-const endPointCategoriesList = '/products/category-list';
-const endPointProducts = '/products';
-const endPointFilterByCategory = '/products/category/';
-const currentPage = 1;
 
-export async function getCategoriesList() {
-  const response = await axios.get(`${BASE_URL}${endPointCategoriesList}`);
+export async function getCategories() {
+  const response = await axios.get(
+    'https://dummyjson.com/products/category-list'
+  );
   return response.data;
 }
 
-export async function getProducts() {
+export async function getProducts({ limit = 12, skip = 0 }) {
   const response = await axios.get(
-    `${BASE_URL}${endPointProducts}?limit=12&skip=${(currentPage - 1) * 12}`
+    `https://dummyjson.com/products?limit=${limit}&skip=${skip}`
   );
   return response.data.products;
 }
 
-export async function getProductsByCategories(category) {
+export async function getProductsById(id) {
+  const response = await axios.get(`https://dummyjson.com/products/${id}`);
+  return response.data;
+}
+
+export async function getProductsByCategory(category) {
   const response = await axios.get(
-    `${BASE_URL}${endPointFilterByCategory}${category}`
+    `https://dummyjson.com/products/category/${category}`
+  );
+  return response.data.products;
+}
+
+export async function getProductsByQuery(query) {
+  const response = await axios.get(
+    `https://dummyjson.com/products/search?q=${query}`
   );
   return response.data.products;
 }
