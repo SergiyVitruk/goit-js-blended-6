@@ -1,0 +1,2 @@
+import{g as a,r as t,a as e,b as n}from"./assets/refs-OEryJ1Tz.js";import{i as d}from"./assets/vendor-D_elxl8o.js";async function c(){const s=a("wishlist");if(s.length===0){t.productsList.innerHTML="",t.notFound.classList.add("not-found--visible");return}try{const o=s.map(i=>e(i)),r=await Promise.all(o);n(r)}catch{d.error({message:"Could not load wishlist"})}}c();
+//# sourceMappingURL=wishlist.js.map
